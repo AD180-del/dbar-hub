@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBAR ICoE Interactive Map</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        #map { height: 100vh; width: 100%; }
+        .popup-header { font-weight: bold; color: #2c3e50; font-size: 1.1em; border-bottom: 1px solid #eee; margin-bottom: 5px; padding-bottom: 5px; }
+        .popup-content { font-size: 0.9em; line-height: 1.4; }
+        .popup-label { font-weight: 600; color: #34495e; }
+    </style>
+</head>
+<body>
+
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        // Initialsise the map
+        const map = L.map('map').setView([20, 0], 2);
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '© OpenStreetMap contributors | DBAR Knowledge Hub'
+        }).addTo(map);
+
+        // ICoE Data (from nodes.yaml)
+        const centres = [
+            { city: "Helsinki, Finland", host: "University of Helsinki / INAR", wg: "DBAR-HiMAC", lat: 60.1695, lon: 24.9354 },
+            { city: "Potenza, Italy", host: "CNR (National Research Council)", wg: "DBAR-HERITAGE", lat: 40.6333, lon: 15.8000 },
+            { city: "Bangkok, Thailand", host: "GISTDA", wg: "DBAR-AGRI", lat: 13.7563, lon: 100.5018 },
+            { city: "Peshawar, Pakistan", host: "University of Peshawar", wg: "DBAR-DISASTER", lat: 34.0151, lon: 71.5249 },
+            { city: "Moscow, Russia", host: "Russian Academy of Sciences", wg: "DBAR-ENVI", lat: 55.7558, lon: 37.6173 },
+            { city: "El Jadida, Morocco", host: "Chouaib Doukkali University", wg: "DBAR-WATER", lat: 33.2333, lon: -8.5000 },
+            { city: "Lusaka, Zambia", host: "University of Zambia", wg: "DBAR-AGRI", lat: -15.3875, lon: 28.3228 },
+            { city: "Columbia, Sri Lanka", host: "University of Colombo", wg: "DBAR-COAST / WATER", lat: 6.9271, lon: 79.8612 },
+            { city: "Sanya, China", host: "CAS-AIR / CBAS", wg: "DATA (Headquarters)", lat: 18.2525, lon: 109.5119 }
+        ];
+
+        // Add markers to the map
+        centres.forEach(centre => {
+            const popupContent = `
+                <div class="popup-header">ICoE ${centre.city.split(',')[0]}</div>
+                <div class="popup-content">
+                    <div><span class="popup-label">Host:</span> ${centre.host}</div>
+                    <div><span class="popup-label">Primary WG:</span> ${centre.wg}</div>
+                </div>
+            `;
+            L.marker([centre.lat, centre.lon]).addTo(map).bindPopup(popupContent);
+        });
+    </script>
+</body>
+</html>

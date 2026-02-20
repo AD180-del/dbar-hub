@@ -1,0 +1,26 @@
+- name: DBAR-DATA (Data Policy and Sharing)
+  focus: Technical Backbone and cloud infrastructure
+
+- name: DBAR-HiMAC (High Mountain and Cold Regions)
+  focus: Arctic and high-altitude Earth observation
+
+- name: DBAR-HERITAGE (Cultural/Natural Heritage)
+  focus: Silk Road heritage sites monitoring
+
+- name: DBAR-COAST (Coastal Zone)
+  focus: Maritime Silk Road sustainability
+
+- name: DBAR-AGRI (Agriculture and Food Security)
+  focus: Regional crop monitoring and food security
+
+- name: DBAR-DISASTER (Disaster Risk Reduction)
+  focus: Collaborative disaster response and EO data
+
+- name: DBAR-URBAN (Urban Development)
+  focus: Sustainable cities and urbanisation tracking
+
+- name: DBAR-WATER (Water Resources)
+  focus: Transboundary water management
+
+- name: DBAR-ENVI (Environmental Change)
+  focus: Global change and ecosystem monitoring

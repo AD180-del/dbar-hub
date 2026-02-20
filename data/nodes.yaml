@@ -1,0 +1,44 @@
+- city: Helsinki, Finland
+  host: University of Helsinki / INAR
+  theme: HiMAC (Arctic/Cold Regions)
+  status: Active (Strategic Polar Node)
+
+- city: Potenza, Italy
+  host: CNR (National Research Council)
+  theme: HERITAGE
+  status: Active (Silk Road Cultural Node)
+
+- city: Bangkok, Thailand
+  host: GISTDA
+  theme: Agriculture & Disaster
+  status: Active
+
+- city: Peshawar, Pakistan
+  host: University of Peshawar
+  theme: Disaster Risk Reduction
+  status: Planned/Operational
+
+- city: Moscow, Russia
+  host: Russian Academy of Sciences
+  theme: Environmental Change (ENVI)
+  status: Active
+
+- city: El Jadida, Morocco
+  host: Chouaib Doukkali University
+  theme: Water Resources
+  status: Active
+
+- city: Lusaka, Zambia
+  host: University of Zambia
+  theme: Agriculture and Food Security
+  status: Active
+
+- city: Columbia, Sri Lanka
+  host: University of Colombo
+  theme: Water Resources / Coastal Zone
+  status: Active
+
+- city: Sanya, China
+  host: CAS-AIR / CBAS
+  theme: Big Earth Data Headquarters
+  status: Active
