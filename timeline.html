@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBAR Timeline | Digital Research Dossier</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Mermaid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral' });</script>
+    <style>
+        .mermaid {
+            background: white;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 2px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <h1 class="sidebar-title">DBAR Hub</h1>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="index.html#overview" class="nav-link">Dossier Overview</a></li>
+                <li class="nav-item"><a href="index.html#matrix" class="nav-link">Institutional Matrix</a></li>
+                <li class="nav-item"><a href="index.html#taxonomy" class="nav-link">Conceptual Taxonomy</a></li>
+                <li class="nav-item"><a href="map.html" class="nav-link">Interactive Regional Map</a></li>
+                <li class="nav-item"><a href="timeline.html" class="nav-link active">Governance Timeline</a></li>
+                <li class="nav-item"><a href="glossary.html" class="nav-link">Acronym Glossary</a></li>
+                <li class="nav-item"><a href="evidence_log.html" class="nav-link">Commitment Log</a></li>
+            </ul>
+        </nav>
+        <div class="footer-meta" style="font-size: 0.7rem; color: var(--secondary-text); margin-top: auto;">
+            © 2026 DBAR Programme | Research Operations
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="dossier-header">
+            <h1>DBAR Institutional Governance Timeline</h1>
+            <p class="dossier-subtitle">Decadal Evolution and Phase Transitions</p>
+        </header>
+
+        <section id="visual-timeline">
+            <h2>Decadal Evolution (2016 - 2026)</h2>
+            <div class="mermaid">
+                timeline
+                title DBAR Decadal Evolution (2016 - 2026)
+                2016 : Launch of DBAR in Beijing : Inauguration of the "Scientific Silk Road" concept
+                2018 : Launch of European ICoEs : Expansion into Potenza (Italy) and Helsinki (Finland)
+                2021 : CBAS Establishment : Opening of the headquarters in Beijing : Launch of SDGSAT-1 (SDG-focused
+                Satellite)
+                2023 : Implementation Phase II : Transition from data collection to decision-support applications
+                2026 : 10-Year Achievement Report : Full synthesis of Big Earth Data for the UN 2030 Agenda
+            </div>
+        </section>
+
+        <section id="phase-analysis">
+            <h2>Phase Analysis</h2>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Phase</th>
+                            <th>Duration</th>
+                            <th>Institutional Focus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Phase I: Conceptualisation</strong></td>
+                            <td>2016 - 2020</td>
+                            <td>Establishing the ICoE network and data sharing protocols.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phase II: Implementation</strong></td>
+                            <td>2021 - 2025</td>
+                            <td>Launching dedicated infrastructure (CBAS, SDGSAT-1) and applying models to SDG targets.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Synthesis</strong></td>
+                            <td>2026+</td>
+                            <td>Consolidating the "Scientific Silk Road" as a global standard for Earth observation.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
