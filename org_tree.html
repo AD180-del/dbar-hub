@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institutional Hierarchy | Digital Research Dossier</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Mermaid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral' });</script>
+    <style>
+        .mermaid {
+            background: white;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 2px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <h1 class="sidebar-title">DBAR Hub</h1>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="index.html" class="nav-link">Dossier Overview</a></li>
+                <li class="nav-item"><a href="index.html#matrix" class="nav-link">Institutional Matrix</a></li>
+                <li class="nav-item"><a href="index.html#taxonomy" class="nav-link">Conceptual Taxonomy</a></li>
+                <li class="nav-item"><a href="map.html" class="nav-link">Interactive Regional Map</a></li>
+                <li class="nav-item"><a href="org_tree.html" class="nav-link active">Institutional Hierarchy</a></li>
+                <li class="nav-item"><a href="timeline.html" class="nav-link">Governance Timeline</a></li>
+                <li class="nav-item"><a href="glossary.html" class="nav-link">Acronym Glossary</a></li>
+                <li class="nav-item"><a href="evidence_log.html" class="nav-link">Commitment Log</a></li>
+            </ul>
+        </nav>
+        <div class="footer-meta" style="font-size: 0.7rem; color: var(--secondary-text); margin-top: auto;">
+            © 2026 DBAR Programme | Research Operations
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="dossier-header">
+            <h1>DBAR Organisational Hierarchy</h1>
+            <p class="dossier-subtitle">Structural Mapping of the Scientific Silk Road</p>
+        </header>
+
+        <section id="hierarchy-visual">
+            <h2>Institutional Structure</h2>
+            <div class="mermaid">
+                graph TD
+                subgraph Top_Level ["Top Level (Governance)"]
+                CAS["Chinese Academy of Sciences (CAS)"]
+                end
+
+                subgraph Executive_Level ["Executive Level (Secretariat)"]
+                CBAS["CBAS (Secretariat / Headquarters)"]
+                end
+
+                subgraph Thematic_Level ["Thematic Level (Working Groups)"]
+                DATA["DBAR-DATA"]
+                HiMAC["DBAR-HiMAC"]
+                HERITAGE["DBAR-HERITAGE"]
+                COAST["DBAR-COAST"]
+                AGRI["DBAR-AGRI"]
+                DISASTER["DBAR-DISASTER"]
+                URBAN["DBAR-URBAN"]
+                WATER["DBAR-WATER"]
+                ENVI["DBAR-ENVI"]
+                end
+
+                subgraph Regional_Level ["Regional Level (ICoEs)"]
+                ICoE_Helsinki["ICoE-Helsinki<br />(Uni Helsinki / INAR, Finland)"]
+                ICoE_Potenza["ICoE-Potenza<br />(CNR, Italy)"]
+                ICoE_Bangkok["ICoE-Bangkok<br />(GISTDA, Thailand)"]
+                ICoE_Peshawar["ICoE-Peshawar<br />(Uni Peshawar, Pakistan)"]
+                ICoE_Moscow["ICoE-Moscow<br />(RAS, Russia)"]
+                ICoE_ElJadida["ICoE-El Jadida<br />(Chouaib Doukkali Uni, Morocco)"]
+                ICoE_Lusaka["ICoE-Lusaka<br />(Uni Zambia, Zambia)"]
+                ICoE_Columbia["ICoE-Columbia / Sri Lanka<br />(Uni Colombo, Sri Lanka)"]
+                end
+
+                %% Vertical Hierarchical Connections
+                CAS --> CBAS
+                CBAS --- DATA
+                CBAS --- HiMAC
+                CBAS --- HERITAGE
+                CBAS --- COAST
+                CBAS --- AGRI
+                CBAS --- DISASTER
+                CBAS --- URBAN
+                CBAS --- WATER
+                CBAS --- ENVI
+
+                %% Mapping ICoEs to Primary Thematic Groups
+                HiMAC -.-> ICoE_Helsinki
+                HERITAGE -.-> ICoE_Potenza
+                AGRI -.-> ICoE_Bangkok
+                DISASTER -.-> ICoE_Peshawar
+                ENVI -.-> ICoE_Moscow
+                WATER -.-> ICoE_ElJadida
+                AGRI -.-> ICoE_Lusaka
+                COAST -.-> ICoE_Columbia
+                WATER -.-> ICoE_Columbia
+
+                %% Style styling
+                style CAS fill:#002147,color:#fff,stroke:#333,stroke-width:2px
+                style CBAS fill:#f7f3e3,stroke:#002147,stroke-width:2px
+            </div>
+        </section>
+
+        <section id="mapping-appendix">
+            <h2>Technical Appendix: Organisational Mapping</h2>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Entity</th>
+                            <th>Role / Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Top Level</strong></td>
+                            <td>CAS</td>
+                            <td>Strategic oversight and primary funding body.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Executive</strong></td>
+                            <td>CBAS</td>
+                            <td>Administrative headquarters and data infrastructure provider.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Thematic</strong></td>
+                            <td>Working Groups</td>
+                            <td>Define research agendas and data standards for specific domains.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Regional</strong></td>
+                            <td>ICoEs</td>
+                            <td>Physical interfaces for localised implementation and data collection.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
