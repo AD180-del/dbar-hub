@@ -5,25 +5,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Institutional Hierarchy | Digital Research Dossier</title>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Mermaid.js -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral' });</script>
     <style>
-        .mermaid {
-            background: white;
-            padding: 2rem;
+        .hierarchy-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .level {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            position: relative;
+            padding: 2rem 1.5rem;
             border: 1px solid var(--border-color);
+            background: rgba(0, 33, 71, 0.02);
+            border-radius: 4px;
+        }
+
+        .level-label {
+            position: absolute;
+            top: -0.75rem;
+            left: 1.5rem;
+            background: var(--bg-color);
+            padding: 0 0.5rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--secondary-text);
+        }
+
+        .node {
+            background: white;
+            border: 1px solid var(--border-color);
+            padding: 1.25rem;
             border-radius: 2px;
             box-shadow: var(--card-shadow);
-            margin-bottom: 2rem;
-            overflow-x: auto;
+            text-align: center;
+            min-width: 200px;
+            transition: all 0.2s ease;
+        }
+
+        .node:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .node h4 {
+            font-family: var(--header-font);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: var(--accent-color);
+        }
+
+        .node p {
+            font-size: 0.85rem;
+            color: var(--secondary-text);
+            margin: 0;
+        }
+
+        .node.governance {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .node.governance h4 {
+            color: white;
+        }
+
+        .node.governance p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .node.executive {
+            background: #fff;
+            border: 2px solid var(--accent-color);
+        }
+
+        .connector {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: -0.5rem 0;
+        }
+
+        .line {
+            width: 2px;
+            height: 1.5rem;
+            background: var(--border-color);
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .thematic-grid,
+        .regional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .regional-grid {
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        }
+
+        .node.thematic {
+            border-style: dashed;
+            min-width: unset;
+            padding: 0.75rem;
+        }
+
+        .node.regional {
+            border-left: 5px solid var(--accent-color);
+            text-align: left;
+        }
+
+        .node.regional h4 {
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .node {
+                min-width: 100%;
+            }
         }
     </style>
 </head>
@@ -56,81 +180,114 @@
         </header>
 
         <section id="hierarchy-visual">
-            <h2>Institutional Structure</h2>
-            <div class="mermaid">
-                flowchart LR
-                %% Global Styling
-                classDef default font-family:Lora,font-size:14px,color:#2d2d2d,stroke:#d1d5db,stroke-width:1px
-                classDef governance fill:#002147,color:#fff,stroke-width:2px
-                classDef executive fill:#f7f3e3,stroke:#002147,stroke-width:2px
-                classDef thematic fill:#fff,stroke:#4a5568,stroke-dasharray: 5 5
-                classDef regional fill:#fff,stroke:#002147,stroke-width:1.5px
+            <h2>Institutional Architecture</h2>
 
-                subgraph Governance ["Governance"]
-                CAS["Chinese Academy of Sciences (CAS)"]
-                end
+            <div class="hierarchy-container">
+                <!-- Level 1: Governance -->
+                <div class="level">
+                    <span class="level-label">Governance & Oversight</span>
+                    <div class="node governance">
+                        <h4>CAS</h4>
+                        <p>Chinese Academy of Sciences</p>
+                    </div>
+                </div>
 
-                subgraph Executive ["Secretariat"]
-                CBAS["CBAS Headquarters"]
-                end
+                <div class="connector">
+                    <div class="line"></div>
+                    <div class="dot"></div>
+                    <div class="line"></div>
+                </div>
 
-                subgraph Thematic ["Thematic Domains"]
-                direction TB
-                DATA["DBAR-DATA"]
-                HiMAC["DBAR-HiMAC"]
-                HERITAGE["DBAR-HERITAGE"]
-                COAST["DBAR-COAST"]
-                AGRI["DBAR-AGRI"]
-                DISASTER["DBAR-DISASTER"]
-                URBAN["DBAR-URBAN"]
-                WATER["DBAR-WATER"]
-                ENVI["DBAR-ENVI"]
-                end
+                <!-- Level 2: Executive -->
+                <div class="level">
+                    <span class="level-label">Executive Secretariat</span>
+                    <div class="node executive">
+                        <h4>CBAS</h4>
+                        <p>International Research Centre of Big Data for SDGs</p>
+                    </div>
+                </div>
 
-                subgraph Regional ["Regional Implementation Nodes (ICoEs)"]
-                direction TB
-                ICoE_Helsinki["ICoE-Helsinki (Finland)"]
-                ICoE_Potenza["ICoE-Potenza (Italy)"]
-                ICoE_Bangkok["ICoE-Bangkok (Thailand)"]
-                ICoE_Peshawar["ICoE-Peshawar (Pakistan)"]
-                ICoE_Moscow["ICoE-Moscow (Russia)"]
-                ICoE_ElJadida["ICoE-El Jadida (Morocco)"]
-                ICoE_Lusaka["ICoE-Lusaka (Zambia)"]
-                ICoE_Columbia["ICoE-Columbia (Sri Lanka)"]
-                end
+                <div class="connector">
+                    <div class="line"></div>
+                    <div class="dot"></div>
+                    <div class="line"></div>
+                </div>
 
-                %% Core Connections
-                CAS ==> CBAS
+                <!-- Level 3: Thematic -->
+                <div class="level">
+                    <span class="level-label">Scientific Working Groups (Thematic)</span>
+                    <div class="thematic-grid">
+                        <div class="node thematic">
+                            <h4>DBAR-DATA</h4>
+                        </div>
+                        <div class="node thematic">
+                            <h4>DBAR-HiMAC</h4>
+                        </div>
+                        <div class="node thematic">
+                            <h4>DBAR-HERITAGE</h4>
+                        </div>
+                        <div class="node thematic">
+                            <h4>DBAR-COAST</h4>
+                        </div>
+                        <div class="node thematic">
+                            <h4>DBAR-AGRI</h4>
+                        </div>
+                        <div class="node thematic">
+                            <h4>DBAR-DISASTER</h4>
+                        </div>
+                        <div class="node thematic">
+                            <h4>DBAR-WATER</h4>
+                        </div>
+                        <div class="node thematic">
+                            <h4>DBAR-ENVI</h4>
+                        </div>
+                    </div>
+                </div>
 
-                %% Secretariat to Thematic Groups
-                CBAS --- DATA
-                CBAS --- HiMAC
-                CBAS --- HERITAGE
-                CBAS --- COAST
-                CBAS --- AGRI
-                CBAS --- DISASTER
-                CBAS --- URBAN
-                CBAS --- WATER
-                CBAS --- ENVI
+                <div class="connector">
+                    <div class="line"></div>
+                    <div class="dot"></div>
+                    <div class="line"></div>
+                </div>
 
-                %% Cross-Level Links (Functional mapping)
-                HiMAC -.-> ICoE_Helsinki
-                HERITAGE -.-> ICoE_Potenza
-                AGRI -.-> ICoE_Bangkok
-                DISASTER -.-> ICoE_Peshawar
-                ENVI -.-> ICoE_Moscow
-                WATER -.-> ICoE_ElJadida
-                AGRI -.-> ICoE_Lusaka
-                COAST -.-> ICoE_Columbia
-                WATER -.-> ICoE_Columbia
-
-                %% Applying Classes
-                class CAS governance
-                class CBAS executive
-                class DATA,HiMAC,HERITAGE,COAST,AGRI,DISASTER,URBAN,WATER,ENVI thematic
-                class
-                ICoE_Helsinki,ICoE_Potenza,ICoE_Bangkok,ICoE_Peshawar,ICoE_Moscow,ICoE_ElJadida,ICoE_Lusaka,ICoE_Columbia
-                regional
+                <!-- Level 4: Regional -->
+                <div class="level">
+                    <span class="level-label">Regional Implementation (ICoEs)</span>
+                    <div class="regional-grid">
+                        <div class="node regional">
+                            <h4>ICoE-Helsinki</h4>
+                            <p>Finland</p>
+                        </div>
+                        <div class="node regional">
+                            <h4>ICoE-Potenza</h4>
+                            <p>Italy</p>
+                        </div>
+                        <div class="node regional">
+                            <h4>ICoE-Bangkok</h4>
+                            <p>Thailand</p>
+                        </div>
+                        <div class="node regional">
+                            <h4>ICoE-Peshawar</h4>
+                            <p>Pakistan</p>
+                        </div>
+                        <div class="node regional">
+                            <h4>ICoE-Moscow</h4>
+                            <p>Russia</p>
+                        </div>
+                        <div class="node regional">
+                            <h4>ICoE-El Jadida</h4>
+                            <p>Morocco</p>
+                        </div>
+                        <div class="node regional">
+                            <h4>ICoE-Lusaka</h4>
+                            <p>Zambia</p>
+                        </div>
+                        <div class="node regional">
+                            <h4>ICoE-Columbia</h4>
+                            <p>Sri Lanka</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -147,7 +304,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Top Level</strong></td>
+                            <td><strong>Governance</strong></td>
                             <td>CAS</td>
                             <td>Strategic oversight and primary funding body.</td>
                         </tr>
