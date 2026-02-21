@@ -1,7 +1,7 @@
 # DBAR Knowledge Hub: Global Infrastructure Portal
 
 ## 🧭 Hub Navigation
-[Interactive Map](file:///c:/Users/User/dbar-hub/dbar-hub/map.html) | [Acronym Glossary](file:///c:/Users/User/dbar-hub/dbar-hub/glossary.md) | [Governance Timeline](file:///c:/Users/User/dbar-hub/dbar-hub/timeline.md) | [Commitment Log](file:///c:/Users/User/dbar-hub/dbar-hub/evidence_log.md) | [Hierarchy Tree](file:///c:/Users/User/dbar-hub/dbar-hub/org_tree.md) | [Presentation Deck](file:///c:/Users/User/dbar-hub/dbar-hub/presentation/dbar_reference.md)
+[Interactive Map](map.html) | [Acronym Glossary](glossary.md) | [Governance Timeline](timeline.md) | [Commitment Log](evidence_log.md) | [Hierarchy Tree](org_tree.md) | [Presentation Deck](presentation/dbar_reference.md)
 
 ## Strategic Institutional Matrix
 
