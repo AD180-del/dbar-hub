@@ -50,11 +50,23 @@ The **International Centres of Excellence (ICoEs)** function as the regional hub
 
 - **Structure**: 9 active/planned centres worldwide (e.g., Helsinki, Bangkok, Potenza).
 - **Function**: Regional data nodes that translate global satellite data into local decision-making tools.
-- **Role**: Facilitate knowledge transfer and host thematic Working Groups (HiMAC, Disaster, Heritage).
+- **Role**: Facilitate knowledge transfer and host thematic Working Groups.
 
 ---
 
-# 5. Summary: A Socio-Technical Network
+# 5. Scientific Working Groups (WGs)
+
+The programme is divided into 9 thematic domains for technical analysis:
+
+- **DBAR-DATA**: CASEarth cloud infrastructure and standards.
+- **DBAR-HiMAC**: Monitoring the "Third Pole" and Polar Silk Road.
+- **DBAR-HERITAGE**: Soft power and UNESCO site preservation.
+- **DBAR-WATER / AGRI / COAST**: Resource diplomacy and Blue Economy.
+- **DBAR-URBAN / DISASTER / ENVI**: Sustainable development and rapid response.
+
+---
+
+# 6. Summary: A Socio-Technical Network
 
 - **Factual Backbone**: Anchored by the Chinese Academy of Sciences.
 - **Standardisation**: Drives global standards for Big Earth Data.
