@@ -103,13 +103,42 @@
         }
 
         .marker-partner {
-            background-color: #2e7d32;
-            /* Green */
+            background-color: #d32f2f;
+            /* Crimson Red */
             border: 2px solid #fff;
             border-radius: 50%;
-            width: 10px;
-            height: 10px;
+            width: 11px;
+            height: 11px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Map Legend */
+        .map-legend {
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            z-index: 1000;
+            background: white;
+            padding: 15px;
+            border: 1px solid var(--accent-color);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -117,6 +146,23 @@
 <body>
 
     <a href="index.html" class="back-btn">← Back to Dossier</a>
+
+    <div class="map-legend">
+        <div class="legend-item">
+            <span class="legend-dot"
+                style="background: #d4af37; border: 1px solid #8b0000; width: 14px; height: 14px;"></span>
+            <strong>Executive HQ (CBAS)</strong>
+        </div>
+        <div class="legend-item">
+            <span class="legend-dot" style="background: #002147;"></span>
+            <span>Regional ICoE Node</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-dot" style="background: #d32f2f;"></span>
+            <span>Strategic Partner</span>
+        </div>
+    </div>
+
     <div id="map"></div>
 
     <!-- Leaflet JS -->
