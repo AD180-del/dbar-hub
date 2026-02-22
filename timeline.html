@@ -11,17 +11,137 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Mermaid.js -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral' });</script>
+    <!-- Custom Timeline Styles -->
     <style>
-        .mermaid {
+        .timeline-container {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem 0;
+            padding-left: 2rem;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 0;
+            width: 10px;
+            height: 10px;
             background: white;
-            padding: 2rem;
+            border: 3px solid var(--accent-color);
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: var(--accent-color);
+            font-family: var(--header-font);
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: white;
             border: 1px solid var(--border-color);
-            border-radius: 2px;
+            padding: 1.5rem;
             box-shadow: var(--card-shadow);
-            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .timeline-content p {
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+            margin-bottom: 1rem;
+        }
+
+        .milestone-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .type-gov {
+            border-color: #002147;
+        }
+
+        /* Governance */
+        .type-sci {
+            border-color: #2e7d32;
+        }
+
+        /* Scientific */
+        .type-ach {
+            border-color: #d4af37;
+        }
+
+        /* Achievement */
+
+        .marker-gov {
+            background: #002147 !important;
+            border-color: #002147 !important;
+        }
+
+        .marker-sci {
+            background: #2e7d32 !important;
+            border-color: #2e7d32 !important;
+        }
+
+        .marker-ach {
+            background: #d4af37 !important;
+            border-color: #d4af37 !important;
+        }
+
+        .timeline-item:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .timeline-item:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .timeline-item:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .timeline-item:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .timeline-item:nth-child(5) {
+            animation-delay: 0.5s;
         }
     </style>
 </head>
@@ -55,16 +175,81 @@
         </header>
 
         <section id="visual-timeline">
-            <h2>Decadal Evolution (2016 - 2026)</h2>
-            <div class="mermaid">
-                timeline
-                title DBAR Decadal Evolution (2016 - 2026)
-                2016 : Launch of DBAR in Beijing : Inauguration of the "Scientific Silk Road" concept
-                2018 : Launch of European ICoEs : Expansion into Potenza (Italy) and Helsinki (Finland)
-                2021 : CBAS Establishment : Opening of the headquarters in Beijing : Launch of SDGSAT-1 (SDG-focused
-                Satellite)
-                2023 : Implementation Phase II : Transition from data collection to decision-support applications
-                2026 : 10-Year Achievement Report : Full synthesis of Big Earth Data for the UN 2030 Agenda
+            <h2>Decadal Evolution (2016 — 2026)</h2>
+            <div class="timeline-container">
+                <!-- 2016 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-content type-gov">
+                        <h3>Inauguration of DBAR</h3>
+                        <p>Formal launch of the Digital Belt and Road Programme in Beijing. Establishment of the
+                            "Scientific Silk Road" concept to leverage Big Earth Data for sustainable development across
+                            the Belt and Road region.</p>
+                        <div class="milestone-tags">
+                            <span class="tag">Governance</span>
+                            <span class="tag">Foundational</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2018 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-content type-sci">
+                        <h3>European Network Expansion</h3>
+                        <p>Inauguration of key International Centres of Excellence in Europe, including ICoE-Potenza
+                            (Italy) and ICoE-Helsinki (Finland). Strategic shift towards polar and cultural heritage
+                            monitoring.</p>
+                        <div class="milestone-tags">
+                            <span class="tag">Scientific</span>
+                            <span class="tag">Internationalisation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2021 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-content type-gov">
+                        <h3>CBAS & Infrastructure Launch</h3>
+                        <p>Operational debut of the International Research Centre of Big Data for Sustainable
+                            Development Goals (CBAS). Successful launch of <strong>SDGSAT-1</strong>, the first
+                            satellite dedicated to the UN 2030 Agenda.</p>
+                        <div class="milestone-tags">
+                            <span class="tag">Governance</span>
+                            <span class="tag">Technical</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content type-sci">
+                        <h3>Implementation Phase II</h3>
+                        <p>Transition from fundamental data collection to integrated decision-support applications.
+                            Expansion of ICoE nodes in Africa (Sunyani, Ghana) and Central Asia.</p>
+                        <div class="milestone-tags">
+                            <span class="tag">Scientific</span>
+                            <span class="tag">Regionalization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2026 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">2026</div>
+                    <div class="timeline-content type-ach">
+                        <h3>Decadal Achievement Synthesis</h3>
+                        <p>Consolidation of 10 years of research outcomes into a global achievement report. Positioning
+                            the DBAR Knowledge Hub as a primary evidence base for the final push toward the 2030 Agenda.
+                        </p>
+                        <div class="milestone-tags">
+                            <span class="tag">Achievement</span>
+                            <span class="tag">Policy Impact</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
