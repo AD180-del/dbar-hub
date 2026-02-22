@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Intelligence | Digital Research Dossier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .personnel-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .category-section h2 {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .dossier-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dossier-card::before {
+            content: "CLASSIFIED / SCIENTIFIC INTEL";
+            position: absolute;
+            top: 10px;
+            right: -40px;
+            background: rgba(0, 33, 71, 0.05);
+            padding: 5px 50px;
+            transform: rotate(45deg);
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: var(--secondary-text);
+            letter-spacing: 0.1em;
+        }
+
+        .dossier-photo {
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid var(--border-color);
+            font-family: var(--header-font);
+            color: #999;
+            font-style: italic;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .dossier-content {
+            padding: 2rem;
+        }
+
+        .dossier-header {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        .dossier-name {
+            font-size: 1.75rem;
+            color: var(--accent-color);
+            margin: 0;
+        }
+
+        .dossier-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--secondary-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .dossier-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-item h4 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--secondary-text);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-item p {
+            margin: 0;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .dossier-bio {
+            font-family: var(--header-font);
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .dossier-bio p {
+            margin-bottom: 1rem;
+        }
+
+        .expert-tag {
+            display: inline-block;
+            background: rgba(0, 33, 71, 0.05);
+            padding: 2px 8px;
+            border-radius: 2px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .dossier-card {
+                grid-template-columns: 1fr;
+            }
+
+            .dossier-photo {
+                height: 150px;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <h1 class="sidebar-title">DBAR Hub</h1>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="index.html" class="nav-link">Dossier Overview</a></li>
+                <li class="nav-item"><a href="index.html#matrix" class="nav-link">Institutional Matrix</a></li>
+                <li class="nav-item"><a href="sdg_framework.html" class="nav-link">DBAR SDG Mandate</a></li>
+                <li class="nav-item"><a href="map.html" class="nav-link">Interactive Regional Map</a></li>
+                <li class="nav-item"><a href="org_tree.html" class="nav-link">Institutional Hierarchy</a></li>
+                <li class="nav-item"><a href="personnel.html" class="nav-link active">Scientific Intelligence</a></li>
+                <li class="nav-item"><a href="timeline.html" class="nav-link">Governance Timeline</a></li>
+                <li class="nav-item"><a href="glossary.html" class="nav-link">Acronym Glossary</a></li>
+                <li class="nav-item"><a href="evidence_log.html" class="nav-link">Commitment Log</a></li>
+            </ul>
+        </nav>
+        <div class="footer-meta" style="font-size: 0.7rem; color: var(--secondary-text); margin-top: auto;">
+            © 2026 DBAR Programme | Research Operations
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="dossier-header-main">
+            <h1>Scientific Intelligence: Personnel Archive</h1>
+            <p class="dossier-subtitle">Biographical Records of the DBAR Scientific Command</p>
+        </header>
+
+        <div class="personnel-grid">
+            <!-- EXECUTIVE COMMAND -->
+            <section class="category-section" id="executive">
+                <h2><span>01</span> Executive Command</h2>
+
+                <div class="dossier-card" id="guo-huadong">
+                    <div class="dossier-photo">Archive Image <br> GH-2016</div>
+                    <div class="dossier-content">
+                        <div class="dossier-header">
+                            <h3 class="dossier-name">Prof. Guo Huadong</h3>
+                            <span class="dossier-title">Programme Founder & Chair</span>
+                        </div>
+                        <div class="dossier-stats">
+                            <div class="stat-item">
+                                <h4>Affiliation</h4>
+                                <p>Chinese Academy of Sciences (CAS)</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>Key Roles</h4>
+                                <p>DG of CBAS, Chief Scientist of CASEarth</p>
+                            </div>
+                        </div>
+                        <div class="dossier-bio">
+                            <p>Leading Chinese scientist in remote sensing and Digital Earth, renowned for initiating
+                                the Digital Belt and Road Programme (DBAR) in 2016. Academician of CAS and Honorary
+                                President of the International Society for Digital Earth (ISDE).</p>
+                            <p>Specialises in radar remote sensing, Earth observation, and big data applications for UN
+                                SDGs. Author of over 500 papers and 24 books.</p>
+                        </div>
+                        <div class="expert-tags">
+                            <span class="expert-tag">Radar Remote Sensing</span>
+                            <span class="expert-tag">Digital Earth</span>
+                            <span class="expert-tag">UN SDGs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dossier-card" id="chen-fang">
+                    <div class="dossier-photo">Archive Image <br> CF-CAS</div>
+                    <div class="dossier-content">
+                        <div class="dossier-header">
+                            <h3 class="dossier-name">Prof. Chen Fang</h3>
+                            <span class="dossier-title">Deputy Secretary-General</span>
+                        </div>
+                        <div class="dossier-stats">
+                            <div class="stat-item">
+                                <h4>Affiliation</h4>
+                                <p>Aerospace Information Research Institute, CAS</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>Key Roles</h4>
+                                <p>Deputy DG of CBAS, Director of SDIM</p>
+                            </div>
+                        </div>
+                        <div class="dossier-bio">
+                            <p>Prominent researcher in disaster risk management and remote sensing. Serves as Chief
+                                Scientist for the DBAR platform under CASEarth and directs the CAS-TWAS Centre of
+                                Excellence on Space Technology for Disaster Mitigation (SDIM).</p>
+                            <p>Expertise in GLOfs, landslides, wildfires, and droughts assessment across the Belt and
+                                Road regions using Big Earth Data.</p>
+                        </div>
+                        <div class="expert-tags">
+                            <span class="expert-tag">Disaster Risk Management</span>
+                            <span class="expert-tag">SDIM</span>
+                            <span class="expert-tag">Regional Sustainability</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dossier-card" id="qiu-yubao">
+                    <div class="dossier-photo">Archive Image <br> QY-CAS</div>
+                    <div class="dossier-content">
+                        <div class="dossier-header">
+                            <h3 class="dossier-name">Prof. Qiu Yubao</h3>
+                            <span class="dossier-title">Secretary General</span>
+                        </div>
+                        <div class="dossier-stats">
+                            <div class="stat-item">
+                                <h4>Affiliation</h4>
+                                <p>AIR-CAS / CBAS</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>Key Roles</h4>
+                                <p>Director of Digital Environment (CBAS), GEOCRI Lead</p>
+                            </div>
+                        </div>
+                        <div class="dossier-bio">
+                            <p>Research professor specialising in microwave remote sensing for the cryosphere and Arctic
+                                environments. Coordinates DBAR's regional sustainability efforts and leads the GEO Cold
+                                Regions Initiative (GEOCRI).</p>
+                        </div>
+                        <div class="expert-tags">
+                            <span class="expert-tag">Cryosphere</span>
+                            <span class="expert-tag">High-Mountain Asia</span>
+                            <span class="expert-tag">Arctic Sustainability</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dossier-card" id="liang-dong">
+                    <div class="dossier-photo">Archive Image <br> LD-CBAS</div>
+                    <div class="dossier-content">
+                        <div class="dossier-header">
+                            <h3 class="dossier-name">Dr. Liang Dong</h3>
+                            <span class="dossier-title">Deputy Secretary-General</span>
+                        </div>
+                        <div class="dossier-stats">
+                            <div class="stat-item">
+                                <h4>Affiliation</h4>
+                                <p>CBAS / AIR-CAS</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>Key Roles</h4>
+                                <p>Assistant DG of CBAS, SG of CNISDE</p>
+                            </div>
+                        </div>
+                        <div class="dossier-bio">
+                            <p>Associate Professor focused on international engagements and open data coordination.
+                                Manages DBAR's international partnerships and serves as the Secretary-General of the
+                                Chinese National Committee for ISDE.</p>
+                        </div>
+                        <div class="expert-tags">
+                            <span class="expert-tag">Open Data</span>
+                            <span class="expert-tag">International Coordination</span>
+                            <span class="expert-tag">Applied Mathematics</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INTERNATIONAL FOCAL POINTS -->
+            <section class="category-section" id="focal-points">
+                <h2><span>02</span> International Focal Points (ICoE)</h2>
+
+                <div class="dossier-card" id="markku-kulmala">
+                    <div class="dossier-photo">Archive Image <br> MK-FIN</div>
+                    <div class="dossier-content">
+                        <div class="dossier-header">
+                            <h3 class="dossier-name">Prof. Markku Kulmala</h3>
+                            <span class="dossier-title">Director, ICoE-Helsinki</span>
+                        </div>
+                        <div class="dossier-stats">
+                            <div class="stat-item">
+                                <h4>Affiliation</h4>
+                                <p>University of Helsinki (INAR)</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>Expertise</h4>
+                                <p>Atmospheric Aerosols & Climate Change</p>
+                            </div>
+                        </div>
+                        <div class="dossier-bio">
+                            <p>World-leading expert in biosphere-atmosphere interactions and climate mechanisms.
+                                Academician of Science and lead for SMEAR stations, ICOS, and ACTRIS infrastructures.
+                            </p>
+                        </div>
+                        <div class="expert-tags">
+                            <span class="expert-tag">Aerosol Dynamics</span>
+                            <span class="expert-tag">Air Quality</span>
+                            <span class="expert-tag">Arctic Science</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dossier-card" id="rosa-lasaponara">
+                    <div class="dossier-photo">Archive Image <br> RL-ITA</div>
+                    <div class="dossier-content">
+                        <div class="dossier-header">
+                            <h3 class="dossier-name">Prof. Rosa Lasaponara</h3>
+                            <span class="dossier-title">Director, ICoE-Potenza</span>
+                        </div>
+                        <div class="dossier-stats">
+                            <div class="stat-item">
+                                <h4>Affiliation</h4>
+                                <p>CNR-IMAA (Italy)</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>Expertise</h4>
+                                <p>Space Archaeology & Natural Heritage</p>
+                            </div>
+                        </div>
+                        <div class="dossier-bio">
+                            <p>Research Director at CNR-IMAA. Specialises in satellite time series for risk assessment
+                                and the use of Big Earth Data for heritage monitoring along the Silk Road.</p>
+                        </div>
+                        <div class="expert-tags">
+                            <span class="expert-tag">Cultural Heritage</span>
+                            <span class="expert-tag">Space Archaeology</span>
+                            <span class="expert-tag">Time Series Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TECHNICAL CHAIRS -->
+            <section class="category-section" id="chairs">
+                <h2><span>03</span> Technical Chairs</h2>
+
+                <div class="dossier-card" id="martino-pesaresi">
+                    <div class="dossier-photo">Archive Image <br> MP-JRC</div>
+                    <div class="dossier-content">
+                        <div class="dossier-header">
+                            <h3 class="dossier-name">Prof. Martino Pesaresi</h3>
+                            <span class="dossier-title">Co-Chair, DBAR-URBAN</span>
+                        </div>
+                        <div class="dossier-stats">
+                            <div class="stat-item">
+                                <h4>Affiliation</h4>
+                                <p>European Commission JRC</p>
+                            </div>
+                        </div>
+                        <div class="dossier-bio">
+                            <p>Heads the Global Human Settlement Layer (GHSL) team at the JRC. Pioneers geospatial
+                                analysis to map urban growth and population distribution for UN SDGs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dossier-card" id="rajib-shaw">
+                    <div class="dossier-photo">Archive Image <br> RS-JPN</div>
+                    <div class="dossier-content">
+                        <div class="dossier-header">
+                            <h3 class="dossier-name">Prof. Rajib Shaw</h3>
+                            <span class="dossier-title">Co-Chair, DBAR-DISASTER</span>
+                        </div>
+                        <div class="dossier-stats">
+                            <div class="stat-item">
+                                <h4>Affiliation</h4>
+                                <p>Keio University, Japan</p>
+                            </div>
+                        </div>
+                        <div class="dossier-bio">
+                            <p>Globally recognised disaster risk reduction expert. Leads community-based management and
+                                climate adaptation research across Asia. UN Sasakawa Award recipient.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dossier-card" id="li-guoqing">
+                    <div class="dossier-photo">Archive Image <br> LG-NODA</div>
+                    <div class="dossier-content">
+                        <div class="dossier-header">
+                            <h3 class="dossier-name">Prof. Li Guoqing</h3>
+                            <span class="dossier-title">Co-Chair, DBAR-DATA</span>
+                        </div>
+                        <div class="dossier-stats">
+                            <div class="stat-item">
+                                <h4>Affiliation</h4>
+                                <p>AIR-CAS / NODA</p>
+                            </div>
+                        </div>
+                        <div class="dossier-bio">
+                            <p>Director of China's National Earth Observation Data Centre (NODA). Advances big Earth
+                                data platforms and cloud services for Belt and Road nations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dossier-card" id="wu-bingfang">
+                    <div class="dossier-photo">Archive Image <br> WB-AGRI</div>
+                    <div class="dossier-content">
+                        <div class="dossier-header">
+                            <h3 class="dossier-name">Prof. Wu Bingfang</h3>
+                            <span class="dossier-title">Co-Chair, DBAR-AGRI</span>
+                        </div>
+                        <div class="dossier-stats">
+                            <div class="stat-item">
+                                <h4>Affiliation</h4>
+                                <p>AIR-CAS</p>
+                            </div>
+                        </div>
+                        <div class="dossier-bio">
+                            <p>Creator of CropWatch (global crop monitoring). Specialises in food security analysis,
+                                evapotranspiration, and agricultural big data applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+</body>
+
+</html>
