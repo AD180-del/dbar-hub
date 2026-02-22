@@ -57,7 +57,7 @@
         </section>
 
         <section id="matrix">
-            <h2>Strategic Institutional Matrix</h2>
+            <h2>Institutional Matrix</h2>
             <div class="card">
                 <table id="matrix-table">
                     <thead>
@@ -106,15 +106,15 @@
         async function loadHubData() {
             try {
                 const centres = [
-                    { city: "Bangkok, Thailand", host: "GISTDA", theme: "Climate resilience & biodiversity", director: "Surapong Bakonba", director_id: "guo-huadong", date: "Feb 2018", sdgs: "13, 14, 15" },
-                    { city: "Columbia, USA", host: "Uni South Carolina", theme: "Coastal Zone Monitoring", director: "Dr. Jerry Mitchell", director_id: "guo-huadong", date: "Nov 2018", sdgs: "14" },
-                    { city: "El Jadida, Morocco", host: "Chouaib Doukkali Uni", theme: "Water & Urban Sustainability", director: "Prof. Chouaib Doukkali", director_id: "guo-huadong", date: "Apr 2018", sdgs: "6, 11, 13, 14, 15" },
+                    { city: "Bangkok, Thailand", host: "NRCT", theme: "Climate resilience & biodiversity", director: "Director, NRCT", director_id: "guo-huadong", date: "Feb 2018", sdgs: "13, 14, 15" },
+                    { city: "Columbia, USA", host: "Uni South Carolina", theme: "Coastal Zone Monitoring", director: "Director, ICoE-Columbia", director_id: "guo-huadong", date: "Nov 2018", sdgs: "14" },
+                    { city: "El Jadida, Morocco", host: "Chouaib Doukkali Uni", theme: "Water & Urban Sustainability", director: "Director, ICoE-El Jadida", director_id: "guo-huadong", date: "Apr 2018", sdgs: "6, 11, 13, 14, 15" },
                     { city: "Helsinki, Finland", host: "Uni Helsinki / INAR", theme: "Cold Regions & Air Quality", director: "Markku Kulmala", director_id: "markku-kulmala", date: "Oct 2018", sdgs: "11, 13, 15" },
-                    { city: "Lusaka, Zambia", host: "Uni Zambia", theme: "Agriculture & Food Security", director: "Dr. Imasiku Nyambe", director_id: "guo-huadong", date: "Jun 2018", sdgs: "2" },
-                    { city: "Moscow, Russia", host: "Russian Academy of Science", theme: "Ice Silk Road & Polar Changes", director: "Prof. Valery Bondur", director_id: "guo-huadong", date: "Sep 2018", sdgs: "2, 11, 13" },
-                    { city: "Peshawar, Pakistan", host: "University of Peshawar", theme: "Regional Data Networking", director: "Shahina Tariq", director_id: "guo-huadong", date: "Dec 2017", sdgs: "General" },
+                    { city: "Lusaka, Zambia", host: "Uni Zambia", theme: "Agriculture & Food Security", director: "Director, ICoE-Lusaka", director_id: "guo-huadong", date: "Jun 2018", sdgs: "2" },
+                    { city: "Moscow, Russia", host: "Russian Academy of Science", theme: "Ice Silk Road & Polar Changes", director: "Director, ICoE-Moscow", director_id: "guo-huadong", date: "Sep 2018", sdgs: "2, 11, 13" },
+                    { city: "Peshawar, Pakistan", host: "University of Peshawar", theme: "Regional Data Networking", director: "Director, ICoE-Peshawar", director_id: "guo-huadong", date: "Dec 2017", sdgs: "General" },
                     { city: "Potenza, Italy", host: "CNR (National Research Council)", theme: "Heritage & Wetland Monitoring", director: "Rosa Lasaponara", director_id: "rosa-lasaponara", date: "May 2019", sdgs: "6, 11, 13, 15" },
-                    { city: "Sunyani, Ghana", host: "Uni Energy & Natural Resources", theme: "Water, Energy & Public Health", director: "Prof. Kwabena Kankam-Yeboah", director_id: "guo-huadong", date: "Approved 2021", sdgs: "3, 6, 7, 15" }
+                    { city: "Sunyani, Ghana", host: "Uni Energy & Natural Resources", theme: "Water, Energy & Public Health", director: "Director, ICoE-Sunyani", director_id: "guo-huadong", date: "Approved 2021", sdgs: "3, 6, 7, 15" }
                 ];
 
                 const tableBody = document.getElementById('matrix-body');
