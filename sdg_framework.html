@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBAR SDG Mandate | Digital Research Dossier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .sdg-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .sdg-card {
+            border-left: 4px solid var(--accent-color);
+            background: white;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .sdg-number {
+            font-family: var(--body-font);
+            font-weight: 700;
+            color: var(--secondary-text);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .sdg-title {
+            font-family: var(--header-font);
+            font-size: 1.25rem;
+            color: var(--accent-color);
+            margin: 0;
+        }
+
+        .mission-section {
+            background: rgba(0, 33, 71, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 4px;
+        }
+
+        .mission-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .mission-item h4 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.25rem;
+        }
+
+        .quote-box {
+            font-family: var(--header-font);
+            font-style: italic;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--secondary-text);
+        }
+    </style>
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <h1 class="sidebar-title">DBAR Hub</h1>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="index.html" class="nav-link">Dossier Overview</a></li>
+                <li class="nav-item"><a href="index.html#matrix" class="nav-link">Institutional Matrix</a></li>
+                <li class="nav-item"><a href="sdg_framework.html" class="nav-link active">DBAR SDG Mandate</a></li>
+                <li class="nav-item"><a href="map.html" class="nav-link">Interactive Regional Map</a></li>
+                <li class="nav-item"><a href="org_tree.html" class="nav-link">Institutional Hierarchy</a></li>
+                <li class="nav-item"><a href="timeline.html" class="nav-link">Governance Timeline</a></li>
+                <li class="nav-item"><a href="glossary.html" class="nav-link">Acronym Glossary</a></li>
+                <li class="nav-item"><a href="evidence_log.html" class="nav-link">Commitment Log</a></li>
+            </ul>
+        </nav>
+        <div class="footer-meta" style="font-size: 0.7rem; color: var(--secondary-text); margin-top: auto;">
+            © 2026 DBAR Programme | Research Operations
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="dossier-header">
+            <h1>DBAR SDG Mandate: The 2030 Agenda</h1>
+            <p class="dossier-subtitle">Alignment of Big Earth Data with Global Sustainability Goals</p>
+        </header>
+
+        <section id="sdg-context">
+            <p>
+                The 17 Sustainable Development Goals (SDGs) represent the global community's most ambitious plan for a
+                sustainable future. Adopted by all United Nations Member States in 2015, the SDGs are an urgent call
+                for action to promote prosperity while protecting the planet.
+            </p>
+            <div class="quote-box">
+                "Through the pledge to Leave No One Behind, countries have committed to fast-track progress for those
+                furthest behind first."
+            </div>
+            <p>
+                The Digital Belt and Road (DBAR) programme is specifically designed to bridge the data gap in the
+                implementation of these goals, recognizing that social, economic, and environmental sustainability
+                are deeply integrated.
+            </p>
+        </section>
+
+        <section id="un-sdgs">
+            <h2>The 17 Sustainable Development Goals</h2>
+            <div class="sdg-grid">
+                <div class="sdg-card">
+                    <span class="sdg-number">SDG 1</span>
+                    <h3 class="sdg-title">No Poverty</h3>
+                    <p>Ending poverty in all its forms by targeting vulnerability and supporting communities affected by
+                        conflict and climate disasters.</p>
+                </div>
+                <div class="sdg-card">
+                    <span class="sdg-number">SDG 2</span>
+                    <h3 class="sdg-title">Zero Hunger</h3>
+                    <p>Ending hunger and malnutrition through sustainable agriculture and supporting small-scale food
+                        producers.</p>
+                </div>
+                <div class="sdg-card">
+                    <span class="sdg-number">SDG 3</span>
+                    <h3 class="sdg-title">Good Health & Well-being</h3>
+                    <p>Ensuring healthy lives and promoting well-being at all ages, addressing inequalities and
+                        environmental threats.</p>
+                </div>
+                <div class="sdg-card">
+                    <span class="sdg-number">SDG 4</span>
+                    <h3 class="sdg-title">Quality Education</h3>
+                    <p>Ensuring free, equitable primary and secondary schooling and vocational training for all.</p>
+                </div>
+                <div class="sdg-card">
+                    <span class="sdg-number">SDG 5</span>
+                    <h3 class="sdg-title">Gender Equality</h3>
+                    <p>Achieving equality and empowering all women and girls by ending discrimination and violence.</p>
+                </div>
+                <div class="sdg-card">
+                    <span class="sdg-number">SDG 6</span>
+                    <h3 class="sdg-title">Clean Water & Sanitation</h3>
+                    <p>Sustainable management of water resources and restoration of water-related ecosystems.</p>
+                </div>
+                <div class="sdg-card">
+                    <span class="sdg-number">SDG 7</span>
+                    <h3 class="sdg-title">Affordable & Clean Energy</h3>
+                    <p>Ensuring universal access to renewable energy and improving global energy productivity.</p>
+                </div>
+                <div class="sdg-card">
+                    <span class="sdg-number">SDG 8</span>
+                    <h3 class="sdg-title">Decent Work & Economic Growth</h3>
+                    <p>Promoting inclusive growth, technological innovation, and productive employment for all.</p>
+                </div>
+                <div class="sdg-card">
+                    <span class="sdg-number">SDG 9</span>
+                    <h3 class="sdg-title">Industry, Innovation & Infrastructure</h3>
+                    <p>Building resilient infrastructure and fostering inclusive, sustainable industrialisation.</p>
+                </div>
+                <div class="sdg-card">
+                    <span class="sdg-number">SDG 10</span>
+                    <h3 class="sdg-title">Reduced Inequalities</h3>
+                    <p>Promoting economic inclusion for all regardless of sex, race, or ethnicity through sound global
+                        policy.</p>
+                </div>
+                <div class="sdg-card">
+                    <span class="sdg-number">SDG 11</span>
+                    <h3 class="sdg-title">Sustainable Cities & Communities</h3>
+                    <p>Making cities safe, resilient, and inclusive through improved urban planning and transport.</p>
+                </div>
+                <div class="sdg-card">
+                    <span class="sdg-number">SDG 12</span>
+                    <h3 class="sdg-title">Responsible Consumption & Production</h3>
+                    <p>Changing production and consumption patterns to reduce the global ecological footprint.</p>
+                </div>
+                <div class="sdg-card">
+                    <span class="sdg-number">SDG 13</span>
+                    <h3 class="sdg-title">Climate Action</h3>
+                    <p>Urgent action to combat climate change through adaptation and low-carbon development.</p>
+                </div>
+                <div class="sdg-card">
+                    <span class="sdg-number">SDG 14</span>
+                    <h3 class="sdg-title">Life Below Water</h3>
+                    <p>Conserving oceans and marine resources and protecting coastal ecosystems from pollution.</p>
+                </div>
+                <div class="sdg-card">
+                    <span class="sdg-number">SDG 15</span>
+                    <h3 class="sdg-title">Life on Land</h3>
+                    <p>Protecting terrestrial ecosystems, managing forests sustainably, and halting biodiversity loss.
+                    </p>
+                </div>
+                <div class="sdg-card">
+                    <span class="sdg-number">SDG 16</span>
+                    <h3 class="sdg-title">Peace, Justice & Strong Institutions</h3>
+                    <p>Providing access to justice for all and building effective, accountable institutions at all
+                        levels.</p>
+                </div>
+                <div class="sdg-card">
+                    <span class="sdg-number">SDG 17</span>
+                    <h3 class="sdg-title">Partnerships for the Goals</h3>
+                    <p>Strengthening global partnerships and cooperation to revitalise the 2030 Agenda.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cbas-mandate" class="mission-section">
+            <h2>The Executive backbone: CBAS</h2>
+            <p>
+                Announced by President Xi Jinping in 2020, the <strong>International Research Center of Big Data for
+                    Sustainable Development Goals (CBAS)</strong> serves as the executive engine for the DBAR mandate.
+            </p>
+            <div class="mission-list">
+                <div class="mission-item">
+                    <h4>SDG Data Infrastructure</h4>
+                    <p>Developing high-performance computing and AI-driven platforms for one-stop SDG indicator
+                        monitoring and evaluation.</p>
+                </div>
+                <div class="mission-item">
+                    <h4>SDG Satellite Constellation</h4>
+                    <p>Operating a dedicated series of SDG satellites to provide precise Earth Observation data for
+                        scientific research.</p>
+                </div>
+                <div class="mission-item">
+                    <h4>STI Think Tank</h4>
+                    <p>Providing Science, Technology, and Innovation (STI) solutions to support evidence-based policy
+                        making.</p>
+                </div>
+                <div class="mission-item">
+                    <h4>Capacity Building</h4>
+                    <p>Providing professional education and big data training to developing countries to enhance global
+                        capability.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="casearth">
+            <h2>CASEarth: The Technical Foundation</h2>
+            <p>
+                The research outcomes of the <strong>Big Earth Data Science Engineering Program (CASEarth)</strong>
+                provide
+                the technical framework for the mandate. With over 1,200 researchers across 129 institutions, CASEarth
+                facilitates the transition from data to actionable decision-making tools.
+            </p>
+        </section>
+    </main>
+
+</body>
+
+</html>
