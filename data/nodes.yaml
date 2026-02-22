@@ -1,44 +1,62 @@
-- city: Helsinki, Finland
-  host: University of Helsinki / INAR
-  theme: HiMAC (Arctic/Cold Regions)
-  status: Active (Strategic Polar Node)
-
-- city: Potenza, Italy
-  host: CNR (National Research Council)
-  theme: HERITAGE
-  status: Active (Silk Road Cultural Node)
-
 - city: Bangkok, Thailand
   host: GISTDA
-  theme: Agriculture & Disaster
-  status: Active
+  theme: Climate resilience, biodiversity protection, and pollution reduction.
+  launch: February 2018
+  sdgs: [13, 14, 15]
+  status: Active (Renewed to 2030)
 
-- city: Peshawar, Pakistan
-  host: University of Peshawar
-  theme: Disaster Risk Reduction
-  status: Planned/Operational
-
-- city: Moscow, Russia
-  host: Russian Academy of Sciences
-  theme: Environmental Change (ENVI)
+- city: Columbia, United States
+  host: University of South Carolina
+  theme: Sustainable development and ecological monitoring of coastal zones.
+  launch: November 14, 2018
+  sdgs: [14]
   status: Active
 
 - city: El Jadida, Morocco
   host: Chouaib Doukkali University
-  theme: Water Resources
-  status: Active
+  theme: Clean water, urban sustainability, and terrestrial/marine ecosystem health.
+  launch: April 2018
+  sdgs: [6, 11, 13, 14, 15]
+  status: Active (Renewed to 2030)
+
+- city: Helsinki, Finland
+  host: University of Helsinki / INAR
+  theme: Northern cold regions, air quality, climate change, and biodiversity.
+  launch: October 30, 2018
+  sdgs: [11, 13, 15]
+  status: Active (Renewed to 2030)
 
 - city: Lusaka, Zambia
   host: University of Zambia
-  theme: Agriculture and Food Security
+  theme: Agriculture, food security, and land use monitoring in Southern Africa.
+  launch: June 25, 2018
+  sdgs: [2]
   status: Active
 
-- city: Columbia, United States
-  host: University of South Carolina
-  theme: Water Resources / Coastal Zone
+- city: Moscow, Russia
+  host: Russian Academy of Sciences
+  theme: Ice Silk Road, polar environmental changes, forest fires, and urbanisation.
+  launch: September 4, 2018
+  sdgs: [2, 11, 13]
   status: Active
+
+- city: Peshawar, Pakistan
+  host: University of Peshawar
+  theme: Regional Big Earth Data networking, knowledge sharing, and research.
+  launch: December 2017
+  sdgs: [General]
+  status: Active
+
+- city: Potenza, Italy
+  host: CNR (National Research Council)
+  theme: Monitoring and protection of natural, cultural, and wetland heritage.
+  launch: May 14, 2019
+  sdgs: [6, 11, 13, 15]
+  status: Active (Renewed to 2030)
 
 - city: Sunyani, Ghana
   host: University of Energy and Natural Resources
-  theme: Big Earth Data Headquarters
-  status: Active
+  theme: Sustainable development of water, land, and energy resources; public health.
+  launch: Approved 2021 (MoU Jan 13, 2023)
+  sdgs: [3, 6, 7, 15]
+  status: Active (Renewed to 2030)

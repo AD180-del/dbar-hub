@@ -103,15 +103,15 @@
 
         // ICoE Data (from nodes.yaml)
         const centres = [
-            { city: "Helsinki, Finland", host: "University of Helsinki / INAR", wg: "DBAR-HiMAC", lat: 60.1695, lon: 24.9354 },
-            { city: "Potenza, Italy", host: "CNR (National Research Council)", wg: "DBAR-HERITAGE", lat: 40.6333, lon: 15.8000 },
-            { city: "Bangkok, Thailand", host: "GISTDA", wg: "DBAR-AGRI", lat: 13.7563, lon: 100.5018 },
-            { city: "Peshawar, Pakistan", host: "University of Peshawar", wg: "DBAR-DISASTER", lat: 34.0151, lon: 71.5249 },
-            { city: "Moscow, Russia", host: "Russian Academy of Sciences", wg: "DBAR-ENVI", lat: 55.7558, lon: 37.6173 },
-            { city: "El Jadida, Morocco", host: "Chouaib Doukkali University", wg: "DBAR-WATER", lat: 33.2333, lon: -8.5000 },
-            { city: "Lusaka, Zambia", host: "University of Zambia", wg: "DBAR-AGRI", lat: -15.3875, lon: 28.3228 },
-            { city: "Columbia, United States", host: "University of South Carolina", wg: "DBAR-COAST / WATER", lat: 34.0007, lon: -81.0348 },
-            { city: "Sunyani, Ghana", host: "University of Energy and Natural Resources", wg: "Big Earth Data / AGRI", lat: 7.3349, lon: -2.3330 }
+            { city: "Bangkok, Thailand", host: "GISTDA", theme: "Climate resilience & biodiversity", launch: "Feb 2018", sdgs: "13, 14, 15", lat: 13.7563, lon: 100.5018 },
+            { city: "Columbia, USA", host: "University of South Carolina", theme: "Coastal zone monitoring", launch: "Nov 2018", sdgs: "14", lat: 34.0007, lon: -81.0348 },
+            { city: "El Jadida, Morocco", host: "Chouaib Doukkali University", theme: "Water & Urban sustainability", launch: "Apr 2018", sdgs: "6, 11, 13, 14, 15", lat: 33.2333, lon: -8.5000 },
+            { city: "Helsinki, Finland", host: "University of Helsinki / INAR", theme: "Cold regions & Air quality", launch: "Oct 2018", sdgs: "11, 13, 15", lat: 60.1695, lon: 24.9354 },
+            { city: "Lusaka, Zambia", host: "University of Zambia", theme: "Agriculture & Food security", launch: "Jun 2018", sdgs: "2", lat: -15.3875, lon: 28.3228 },
+            { city: "Moscow, Russia", host: "Russian Academy of Sciences", theme: "Ice Silk Road & Polar change", launch: "Sep 2018", sdgs: "2, 11, 13", lat: 55.7558, lon: 37.6173 },
+            { city: "Peshawar, Pakistan", host: "University of Peshawar", theme: "Regional Data Networking", launch: "Dec 2017", sdgs: "General", lat: 34.0151, lon: 71.5249 },
+            { city: "Potenza, Italy", host: "CNR (National Research Council)", theme: "Natural & Cultural Heritage", launch: "May 2019", sdgs: "6, 11, 13, 15", lat: 40.6333, lon: 15.8000 },
+            { city: "Sunyani, Ghana", host: "Uni Energy & Natural Resources", theme: "Water, Energy & Public Health", launch: "Jan 2023", sdgs: "3, 6, 7, 15", lat: 7.3349, lon: -2.3330 }
         ];
 
         // Add markers to the map
@@ -119,8 +119,9 @@
             const popupContent = `
                 <div class="popup-header">ICoE ${centre.city.split(',')[0]}</div>
                 <div class="popup-content">
-                    <div><span class="popup-label">Host:</span> ${centre.host}</div>
-                    <div><span class="popup-label">Primary WG:</span> ${centre.wg}</div>
+                    <div><span class="popup-label">Focus:</span> ${centre.theme}</div>
+                    <div><span class="popup-label">Launch:</span> ${centre.launch}</div>
+                    <div><span class="popup-label">SDG Alignment:</span> ${centre.sdgs}</div>
                 </div>
             `;
             L.marker([centre.lat, centre.lon]).addTo(map).bindPopup(popupContent);
