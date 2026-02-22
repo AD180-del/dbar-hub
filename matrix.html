@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institutional Matrix | Digital Research Dossier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <h1 class="sidebar-title">DBAR Hub</h1>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="index.html" class="nav-link">Dossier Overview</a></li>
+                <li class="nav-item"><a href="matrix.html" class="nav-link active">Institutional Matrix</a></li>
+                <li class="nav-item"><a href="sdg_framework.html" class="nav-link">DBAR SDG Mandate</a></li>
+                <li class="nav-item"><a href="org_tree.html" class="nav-link">Institutional Hierarchy</a></li>
+                <li class="nav-item"><a href="personnel.html" class="nav-link">Scientific Leadership</a></li>
+                <li class="nav-item"><a href="timeline.html" class="nav-link">Governance Timeline</a></li>
+                <li class="nav-item"><a href="glossary.html" class="nav-link">Acronym Glossary</a></li>
+                <li class="nav-item"><a href="map.html" class="nav-link">Interactive Regional Map</a></li>
+                <li class="nav-item"><a href="evidence_log.html" class="nav-link">Commitment Log</a></li>
+            </ul>
+        </nav>
+        <div class="footer-meta" style="font-size: 0.7rem; color: var(--secondary-text); margin-top: auto;">
+            © 2026 DBAR Programme | Research Operations
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="dossier-header">
+            <h1>Institutional Matrix</h1>
+            <p class="dossier-subtitle">Comparative registry of ICoE nodes and research alignments</p>
+        </header>
+
+        <section id="matrix">
+            <div class="card">
+                <table id="matrix-table">
+                    <thead>
+                        <tr>
+                            <th>ICoE Node</th>
+                            <th>Host Institution</th>
+                            <th>Core Research Theme</th>
+                            <th>Lead Director</th>
+                            <th>Integration Date</th>
+                            <th>SDG Targets</th>
+                        </tr>
+                    </thead>
+                    <tbody id="matrix-body">
+                        <!-- Data will be injected here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Simple data injection script
+        async function loadHubData() {
+            try {
+                const centres = [
+                    { city: "Bangkok, Thailand", host: "NRCT", theme: "Climate resilience & biodiversity", director: "Dr. Monthip Sriratana", director_id: "monthip-sriratana", date: "Feb 2018", sdgs: "13, 14, 15" },
+                    { city: "Columbia, USA", host: "Uni South Carolina", theme: "Coastal Zone Monitoring", director: "Prof. Wang Cuizhen", director_id: "guo-huadong", date: "Nov 2018", sdgs: "14" },
+                    { city: "El Jadida, Morocco", host: "Chouaib Doukkali Uni", theme: "Water & Urban Sustainability", director: "Director, ICoE-El Jadida", director_id: "guo-huadong", date: "Apr 2018", sdgs: "6, 11, 13, 14, 15" },
+                    { city: "Helsinki, Finland", host: "Uni Helsinki / INAR", theme: "Cold Regions & Air Quality", director: "Markku Kulmala", director_id: "markku-kulmala", date: "Oct 2018", sdgs: "11, 13, 15" },
+                    { city: "Lusaka, Zambia", host: "Uni Zambia", theme: "Agriculture & Food Security", director: "Director, ICoE-Lusaka", director_id: "guo-huadong", date: "Jun 2018", sdgs: "2" },
+                    { city: "Moscow, Russia", host: "Russian Academy of Science", theme: "Ice Silk Road & Polar Changes", director: "Valery Bondur", director_id: "valery-bondur", date: "Sep 2018", sdgs: "2, 11, 13" },
+                    { city: "Peshawar, Pakistan", host: "University of Peshawar", theme: "Regional Data Networking", director: "Director, ICoE-Peshawar", director_id: "guo-huadong", date: "Dec 2017", sdgs: "General" },
+                    { city: "Potenza, Italy", host: "CNR (National Research Council)", theme: "Heritage & Wetland Monitoring", director: "Rosa Lasaponara", director_id: "rosa-lasaponara", date: "May 2019", sdgs: "6, 11, 13, 15" },
+                    { city: "Sunyani, Ghana", host: "Uni Energy & Natural Resources", theme: "Water, Energy & Public Health", director: "Amos Kabo-Bah", director_id: "amos-kabo-bah", date: "Approved 2021", sdgs: "3, 6, 7, 15" }
+                ];
+
+                const tableBody = document.getElementById('matrix-body');
+                centres.forEach(c => {
+                    const sdgLinks = c.sdgs.split(',').map(s => {
+                        const num = s.trim();
+                        if (num === 'General') return `<span class="tag">General</span>`;
+                        return `<a href="sdg_framework.html#sdg${num}" class="tag">${num}</a>`;
+                    }).join(' ');
+
+                    const row = `<tr>
+                        <td><strong>${c.city}</strong></td>
+                        <td>${c.host}</td>
+                        <td>${c.theme}</td>
+                        <td><a href="personnel.html#${c.director_id}" style="color: var(--accent-color); font-weight: 600;">${c.director}</a></td>
+                        <td style="font-family: var(--body-font); font-size: 0.8rem; color: var(--secondary-text)">${c.date}</td>
+                        <td>${sdgLinks}</td>
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+            } catch (e) {
+                console.error("Data loading failed:", e);
+            }
+        }
+
+        loadHubData();
+    </script>
+</body>
+
+</html>
