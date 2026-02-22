@@ -1,10 +1,18 @@
 /* DBAR Knowledge Hub: Digital Research Dossier Design System */
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
-    --bg-color: #fdfcf0; /* Eggshell White */
-    --text-color: #2d2d2d; /* Deep Charcoal */
-    --accent-color: #002147; /* Oxford Blue */
-    --secondary-text: #4a5568; /* Slate Grey */
+    --bg-color: #fdfcf0;
+    /* Eggshell White */
+    --text-color: #2d2d2d;
+    /* Deep Charcoal */
+    --accent-color: #002147;
+    /* Oxford Blue */
+    --secondary-text: #4a5568;
+    /* Slate Grey */
     --border-color: #d1d5db;
     --sidebar-bg: #f7f3e3;
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -67,7 +75,8 @@ body {
     border-left: 3px solid transparent;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
     background-color: rgba(0, 33, 71, 0.05);
     color: var(--accent-color);
     border-left: 3px solid var(--accent-color);
@@ -81,7 +90,9 @@ body {
     flex-grow: 1;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: var(--header-font);
     color: var(--accent-color);
     margin-bottom: 1.5rem;
@@ -150,7 +161,18 @@ td {
 
 /* Responsive */
 @media (max-width: 768px) {
-    body { flex-direction: column; }
-    .sidebar { width: 100%; height: auto; position: static; }
-    .main-content { margin-left: 0; padding: 2rem; }
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 2rem;
+    }
 }

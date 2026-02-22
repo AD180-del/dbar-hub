@@ -144,32 +144,54 @@
 
         loadHubData();
 
-        // Specific nav highlighting (Scroll-Spy)
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link');
+        // Robust IntersectionObserver Scroll-Spy
+        const observerOptions = {
+            root: null,
+            rootMargin: '-10% 0px -80% 0px', // Trigger when section is near top
+            threshold: 0
+        };
 
-            let current = "overview";
-            const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+        const observer = new IntersectionObserver((entries) => {
+            // Ignore observer during initial hash jump to prevent flickering
+            if (window.location.hash && !window.initialHashProcessed) return;
 
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (scrollPos >= sectionTop - 150) {
-                    current = section.getAttribute('id');
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    updateActiveLink(id);
                 }
             });
+        }, observerOptions);
 
+        document.querySelectorAll('section[id]').forEach((section) => {
+            observer.observe(section);
+        });
+
+        function updateActiveLink(activeId) {
+            const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 const href = link.getAttribute('href');
 
                 // Match anchor links on this page
-                if (href === 'index.html' && current === 'overview') {
+                if (href === 'index.html' && activeId === 'overview') {
                     link.classList.add('active');
-                } else if (href === 'index.html#' + current) {
+                } else if (href === 'index.html#' + activeId) {
                     link.classList.add('active');
                 }
             });
+        }
+
+        // Handle initial hash jump
+        window.addEventListener('load', () => {
+            if (window.location.hash) {
+                const targetId = window.location.hash.slice(1);
+                updateActiveLink(targetId);
+                // Mark processed after a small delay to allow browser jump
+                setTimeout(() => { window.initialHashProcessed = true; }, 100);
+            } else {
+                window.initialHashProcessed = true;
+            }
         });
     </script>
 </body>
