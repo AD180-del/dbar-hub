@@ -119,13 +119,19 @@
 
                 const tableBody = document.getElementById('matrix-body');
                 centres.forEach(c => {
+                    const sdgLinks = c.sdgs.split(',').map(s => {
+                        const num = s.trim();
+                        if (num === 'General') return `<span class="tag">General</span>`;
+                        return `<a href="sdg_framework.html#sdg${num}" class="tag">${num}</a>`;
+                    }).join(' ');
+
                     const row = `<tr>
                         <td><strong>${c.city}</strong></td>
                         <td>${c.host}</td>
                         <td>${c.theme}</td>
                         <td><a href="personnel.html#${c.director_id}" style="color: var(--accent-color); font-weight: 600;">${c.director}</a></td>
                         <td style="font-family: var(--body-font); font-size: 0.8rem; color: var(--secondary-text)">${c.date}</td>
-                        <td><span class="tag">${c.sdgs.split(',').join('</span> <span class="tag">')}</span></td>
+                        <td>${sdgLinks}</td>
                     </tr>`;
                     tableBody.innerHTML += row;
                 });
