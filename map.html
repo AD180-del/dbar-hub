@@ -14,11 +14,14 @@
         rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fdfcf0;
-            --accent-color: #002147;
-            --text-color: #2d2d2d;
-            --header-font: 'Lora', serif;
-            --body-font: 'Inter', sans-serif;
+            --bg-color: #F8F5EE;         /* Warm Cream */
+            --text-color: #1E2328;       /* Deep Charcoal Slate */
+            --accent-color: #DD573D;     /* Terracotta Red */
+            --secondary-accent: #C5A880; /* Muted Brass Gold */
+            --secondary-text: #505A64;   /* Warm Muted Slate */
+            --border-color: #E2DCBE;     /* Fine Sand Border */
+            --header-font: 'Cormorant Garamond', 'Lora', Georgia, serif;
+            --body-font: 'Plus Jakarta Sans', 'Inter', sans-serif;
         }
 
         body {
@@ -31,14 +34,15 @@
         #map {
             height: 100vh;
             width: 100%;
-            border-left: 1px solid #d1d5db;
+            border-left: 1px solid var(--border-color);
+            filter: sepia(0.25) saturate(0.9) contrast(1.05) brightness(0.97);
         }
 
         .popup-header {
             font-family: var(--header-font);
             font-weight: bold;
-            color: var(--accent-color);
-            font-size: 1.1em;
+            color: var(--text-color);
+            font-size: 1.25em;
             border-bottom: 2px solid var(--accent-color);
             margin-bottom: 8px;
             padding-bottom: 4px;
@@ -47,12 +51,13 @@
         .popup-content {
             font-size: 0.9em;
             line-height: 1.5;
-            color: var(--text-color);
+            color: var(--secondary-text);
+            font-family: var(--body-font);
         }
 
         .popup-label {
             font-weight: 700;
-            color: var(--accent-color);
+            color: var(--text-color);
             text-transform: uppercase;
             font-size: 0.75em;
             letter-spacing: 0.05em;
@@ -64,52 +69,54 @@
             top: 20px;
             left: 20px;
             z-index: 1000;
-            background: white;
+            background: var(--bg-color);
             padding: 10px 20px;
-            border: 2px solid var(--accent-color);
-            color: var(--accent-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            letter-spacing: 0.08em;
+            box-shadow: 0 4px 15px rgba(30, 35, 40, 0.05);
+            transition: all 0.25s ease;
+            border-radius: 1px;
+            font-family: var(--body-font);
         }
 
         .back-btn:hover {
-            background: var(--accent-color);
-            color: white;
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            background: white;
+            transform: translateY(-1px);
         }
 
         /* Marker Customization */
         .marker-hq {
-            background-color: #d4af37;
-            /* Gold */
-            border: 2px solid #8b0000;
+            background-color: var(--secondary-accent);
+            border: 2px solid var(--text-color);
             border-radius: 50%;
-            width: 15px;
-            height: 15px;
-            box-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+            width: 14px;
+            height: 14px;
+            box-shadow: 0 0 10px rgba(30, 35, 40, 0.3);
         }
 
         .marker-icoe {
-            background-color: #002147;
-            /* Blue */
+            background-color: var(--accent-color);
             border: 2px solid #fff;
             border-radius: 50%;
             width: 12px;
             height: 12px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 6px rgba(221, 87, 61, 0.4);
         }
 
         .marker-partner {
-            background-color: #d32f2f;
-            /* Crimson Red */
+            background-color: var(--text-color);
             border: 2px solid #fff;
             border-radius: 50%;
             width: 11px;
             height: 11px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         }
 
         /* Map Legend */
@@ -118,14 +125,17 @@
             bottom: 30px;
             left: 20px;
             z-index: 1000;
-            background: white;
+            background: var(--bg-color);
             padding: 15px;
-            border: 1px solid var(--accent-color);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            font-size: 0.8rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 25px rgba(30, 35, 40, 0.08);
+            font-size: 0.78rem;
             display: flex;
             flex-direction: column;
             gap: 10px;
+            border-radius: 1px;
+            font-family: var(--body-font);
+            color: var(--secondary-text);
         }
 
         .legend-item {
@@ -138,7 +148,7 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
@@ -150,15 +160,15 @@
     <div class="map-legend">
         <div class="legend-item">
             <span class="legend-dot"
-                style="background: #d4af37; border: 1px solid #8b0000; width: 14px; height: 14px;"></span>
-            <strong>Executive HQ (CBAS)</strong>
+                style="background: var(--secondary-accent); border: 2px solid var(--text-color); width: 14px; height: 14px;"></span>
+            <strong style="color: var(--text-color);">Executive HQ (CBAS)</strong>
         </div>
         <div class="legend-item">
-            <span class="legend-dot" style="background: #002147;"></span>
+            <span class="legend-dot" style="background: var(--accent-color); border: 2px solid #fff;"></span>
             <span>Regional ICoE Node</span>
         </div>
         <div class="legend-item">
-            <span class="legend-dot" style="background: #d32f2f;"></span>
+            <span class="legend-dot" style="background: var(--text-color); border: 2px solid #fff;"></span>
             <span>Strategic Partner</span>
         </div>
     </div>
@@ -172,10 +182,10 @@
         // Initialsise the map
         const map = L.map('map').setView([20, 0], 2);
 
-        // Add OpenStreetMap tiles
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        // Add CartoDB Positron tiles
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
             maxZoom: 18,
-            attribution: '© OpenStreetMap contributors | DBAR Knowledge Hub'
+            attribution: '© OpenStreetMap contributors | © CartoDB | DBAR Knowledge Hub'
         }).addTo(map);
 
         // ICoE Data

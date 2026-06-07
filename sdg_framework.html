@@ -15,42 +15,52 @@
         .sdg-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
             margin-top: 2rem;
         }
 
         .sdg-card {
+            border: 1px solid var(--border-color);
             border-left: 4px solid var(--accent-color);
-            background: white;
-            padding: 1.5rem;
+            background: var(--card-bg);
+            padding: 1.75rem;
             box-shadow: var(--card-shadow);
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+            border-radius: 1px;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .sdg-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--secondary-accent);
+            box-shadow: 0 12px 25px -4px rgba(30, 35, 40, 0.05);
         }
 
         .sdg-number {
             font-family: var(--body-font);
             font-weight: 700;
             color: var(--secondary-text);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
         }
 
         .sdg-title {
             font-family: var(--header-font);
-            font-size: 1.25rem;
-            color: var(--accent-color);
+            font-size: 1.35rem;
+            color: var(--text-color);
             margin: 0;
+            font-weight: 700;
         }
 
         .mission-section {
-            background: rgba(0, 33, 71, 0.03);
+            background: rgba(221, 87, 61, 0.015);
             border: 1px solid var(--border-color);
-            padding: 2rem;
-            margin-top: 3rem;
-            border-radius: 4px;
+            padding: 2.5rem;
+            margin-top: 3.5rem;
+            border-radius: 1px;
         }
 
         .mission-list {
@@ -63,10 +73,13 @@
         }
 
         .mission-item h4 {
-            color: var(--accent-color);
+            color: var(--text-color);
+            font-family: var(--header-font);
+            font-size: 1.25rem;
             margin-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--accent-color);
             padding-bottom: 0.25rem;
+            font-weight: 700;
         }
 
         .quote-box {
@@ -74,8 +87,10 @@
             font-style: italic;
             border-left: 2px solid var(--accent-color);
             padding-left: 1.5rem;
-            margin: 2rem 0;
+            margin: 2.5rem 0;
             color: var(--secondary-text);
+            font-size: 1.25rem;
+            line-height: 1.5;
         }
     </style>
 </head>
